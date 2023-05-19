@@ -45,12 +45,7 @@ export default function Home() {
 			<div className="py-3 text-white text-center w-100 bg-dark">
 				<p>A PWA Web App built on Next.js</p>
 
-				{/* {supportsPWA &&  */}
-
-				<button id="installApp" onClick={onClick}>
-					Install PWA
-				</button>
-				{/* } */}
+				{supportsPWA && <button onClick={onClick}>Install PWA</button>}
 
 				{/* <button id="installApp">Install</button> */}
 			</div>
