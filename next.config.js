@@ -7,5 +7,22 @@ module.exports = withPWA({
 		register: true,
 		skipWaiting: true,
 		disable: process.env.NODE_ENV === 'development'
+	},
+	async headers() {
+		return [
+			{
+				source: '/:path*',
+				headers: [
+					// {
+					// 	key: 'Content-Security-Policy',
+					// 	value: "default-src 'none';"
+					// },
+					{
+						key: 'X-Frame-Options',
+						value: 'SAMEORIGIN'
+					}
+				]
+			}
+		];
 	}
 });
